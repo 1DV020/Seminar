@@ -12,6 +12,29 @@
 \usepackage{fancyhdr} % Specialsidhuvud och sidfot
 \usepackage{enumerate} 
 \usepackage{xifthen}% provides \isempty test
+\usepackage{listings}% Code examples
+\usepackage{xcolor}
+
+\lstdefinestyle{BashInputStyle}{
+  language=bash,
+  basicstyle=\small\sffamily,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=3pt,
+  frame=tb,
+  columns=fullflexible,
+  backgroundcolor=\color{yellow!20},
+  linewidth=0.9\linewidth,
+  xleftmargin=0.1\linewidth
+}
+% Exampels
+% Inline
+% \lstinline[style=BashInputStyle]´# apt-get --purge remove rubygems´.
+% Multiline
+% \begin{lstlisting}[style=BashInputStyle]
+%    # apt-get --purge remove rubygems
+% \end{lstlisting}
+
 \pagestyle{fancyplain} % Använd sidhuvud och sidfot på alla sidor
 \fancyhead[L]{Seminar 1 -- 1DV020 -- 2015 -- Server Administration} % Titel till vänster i sidhuvud
 \fancyhead[C]{} % Tomt i mitten
@@ -84,35 +107,72 @@ The seminar is on the {\color{red}28th January 2015} and it is compulsory. If yo
 \section{Seminar Questions}
 
 \begin{enumerate}
-\begin{large}
-\item What is it that makes a computer to a server (hardware)?
-\item What is meant by a Server when talking about software?
-\item What are the major historical milestones for:
-    \begin{enumerate}[a.]
-        \item \win{}
-        \item Linux
-    \end{enumerate}
-\item Describe the different types of System administrator roles and which you are most interested in working as?
-\item You have a client who has 50 clients, they want a new file server.
-    \begin{enumerate}[a.]
-        \item How do you find appropriate hardware for the company?
-        \item What hardware do you recommend?
-    \end{enumerate}
-\item What is important to consider before installing a server operating system?
-\item What is a HCL and why should it be checked before you install server operating system?
-\item Client Access Licenses
-    \begin{enumerate}[a.]
-        \item What are the different CALs thats Microsoft has?
-        \item How do tey work?
-        \item How to choose the right CAL, in which scenarios dose the different CALs fit?
-    \end{enumerate}
-\item \core
-    \begin{enumerate}[a.]
-        \item What is \core?
-        \item In which scenarios is a Server Core installation appropriate?
-        \item What advantages does a \core{} installation compared with a \gui?
-    \end{enumerate}
+    \begin{large}
+    \subsection{General}
+        \item What is it that makes a computer to a server (hardware)?
+        \item What is meant by a Server when talking about software?
+        \item What are the major historical milestones for:
+            \begin{enumerate}[a.]
+                \item \win{}
+                \item Linux
+            \end{enumerate}
+        \item Describe the different types of System administrator roles and which you are most interested in working as?
+        \item You have a client who has 50 clients, they want a new file server.
+            \begin{enumerate}[a.]
+                \item How do you find appropriate hardware for the company?
+                \item What hardware do you recommend?
+            \end{enumerate}
+        \item What is important to consider before installing a server operating system?
+        \item What is a HCL and why should it be checked before you install server operating system?
+        \subsection{Microsoft Windows Server}
+        \item Client Access Licenses
+            \begin{enumerate}[a.]
+                \item What are the different CALs thats Microsoft has?
+                \item How do the different CALs work?
+                \item How to choose the right CAL, in which scenarios dose the different CALs fit?
+            \end{enumerate}
+        \item \core
+            \begin{enumerate}[a.]
+                \item What is \core?
+                \item In which scenarios is a Server Core installation appropriate?
+                \item What advantages does a \core{} installation compared with a \gui?
+            \end{enumerate}
+        \item Windows Powershell and Windows Command Prompt
+            \begin{enumerate}[a.]
+                \item What is Windows Powershell?
+                \item What is the difference between Windows Command Prompt and Powershell?
+                \item Name and explain 10 useful command prompt tools/commands.
+                \item Name and explain 10 useful Powershell cmdLets.
+            \end{enumerate}
+        \item How dose Windows Advanced Firewall work?
+        
+        \noindent \subsection{Linux}
+        \item There are a lot of different Linux distributions, choose three of the major distributions and answer the following questions:
+            \begin{enumerate}[a.]
+                \item What are the 5 bigest differences between the distributions?
+                \item What did you choose these distributions?
+            \end{enumerate}
+        \item What should you consider when you are choosing a Linux distribution for a project?
+        \item IPTables
+            \begin{enumerate}[a.]
+                \item What is IPTables?
+                \item How do you manage IPTables?
+                \item Name some basic IPTables commands?
+                \item What dose the following command do:
+                \newline
+                {\color{red}Du får gärna byta ut kommandot mot något som de lär sig mer av}
+                \newline
+                \lstinline[style=BashInputStyle]"sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT" 
 
-\end{large}
+                \item {\color{red}Lägg gärna till fler frågor om IPTables}
+            \end{enumerate}
+        \item What dose the following Bash tools do and how do you use them:
+            \begin{enumerate}[a.]
+                \item sudo
+                \item touch
+                \item {\color{red}Lägg till de verktyg som du tycker är viktiga att kunna så här i början av kursen.}
+            \end{enumerate}
+        \item {\color{red}Vad har jag glömt? Lägg gärna till fler frågor.}
+    \end{large}
 \end{enumerate}
 \end{document}

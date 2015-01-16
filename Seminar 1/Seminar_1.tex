@@ -98,7 +98,7 @@ During this seminar, we will address the following topics:
 %------------------------------------------------
 %	Deadline
 %------------------------------------------------
-\section{Dealine}
+\section{Deadline}
 The seminar is on the {\color{red}28th January 2015} and it is compulsory. If you cannot participate, it must be notified in advance and a written report of the seminar must be submitted no later than {\color{red}3 days} after the seminar. The written report should contain detailed answers to all questions in the seminar.
 \newpage
 %------------------------------------------------
@@ -127,9 +127,9 @@ The seminar is on the {\color{red}28th January 2015} and it is compulsory. If yo
         \subsection{Microsoft Windows Server}
         \item Client Access Licenses
             \begin{enumerate}[a.]
-                \item What are the different CALs thats Microsoft has?
+                \item What are the different CALs that Microsoft has?
                 \item How do the different CALs work?
-                \item How to choose the right CAL, in which scenarios dose the different CALs fit?
+                \item How would you do to choose the right CAL, in which scenarios does the different CALs fit?
             \end{enumerate}
         \item \core
             \begin{enumerate}[a.]
@@ -144,7 +144,7 @@ The seminar is on the {\color{red}28th January 2015} and it is compulsory. If yo
                 \item Name and explain 10 useful command prompt tools/commands.
                 \item Name and explain 10 useful Powershell cmdLets.
             \end{enumerate}
-        \item How dose Windows Advanced Firewall work?
+        \item How does Windows Advanced Firewall work?
         
         \noindent \subsection{Linux}
         \item There are a lot of different Linux distributions, choose three of the major distributions and answer the following questions:
@@ -153,26 +153,51 @@ The seminar is on the {\color{red}28th January 2015} and it is compulsory. If yo
                 \item What did you choose these distributions?
             \end{enumerate}
         \item What should you consider when you are choosing a Linux distribution for a project?
+       
+       
+%------------------------------------------------
+%	Grundläggande
+%------------------------------------------------       
+        \item What does the following Bash programs do, explain 2-3 [options] on each and how to use them:
+            \begin{enumerate}[a.]
+	
+		\item man
+		\item echo
+		\item sudo
+		\item cat
+		\item ls
+		\item mv
+		\item cp
+		\item alias
+
+            \end{enumerate}
+
+	\item Look into how to handle a texteditor such as nano(recommended), vim or emacs. You should be able to edit/create files and search for patterns.
+	
+	\item How can you search for - and install software on your distrubution?
+	
+	\item Locate the logfiles of your Linux distribution does it have a specific folder that stores it or does it use a command such as journalctl?
+
+	\item what is a pipe? '|'
+	
+%------------------------------------------------
+%	S IPtables
+%------------------------------------------------        
         \item IPTables
             \begin{enumerate}[a.]
                 \item What is IPTables?
                 \item How do you manage IPTables?
                 \item Name some basic IPTables commands?
-                \item What dose the following command do:
+                \item What does the following two lines do together and seperate. What would be the difference if we had ACCEPT instead of DROP using both settings?
                 \newline
-                {\color{red}Du får gärna byta ut kommandot mot något som de lär sig mer av}
-                \newline
+                \lstinline[style=BashInputStyle]"sudo iptables --policy INPUT DROP"
+		\newline
                 \lstinline[style=BashInputStyle]"sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT" 
-
-                \item {\color{red}Lägg gärna till fler frågor om IPTables}
+		\newline
+		\item What is the difference between inserting('iptables -A [...]') a rule and appending it? Does it matter where the rule is put?
+		
             \end{enumerate}
-        \item What dose the following Bash tools do and how do you use them:
-            \begin{enumerate}[a.]
-                \item sudo
-                \item touch
-                \item {\color{red}Lägg till de verktyg som du tycker är viktiga att kunna så här i början av kursen.}
-            \end{enumerate}
-        \item {\color{red}Vad har jag glömt? Lägg gärna till fler frågor.}
+       
     \end{large}
 \end{enumerate}
 \end{document}

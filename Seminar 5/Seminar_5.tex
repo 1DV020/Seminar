@@ -1,0 +1,120 @@
+%----------------------------------------------------------------------------------------
+%	Inställningar och dokumentkonfiguration
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{report} % A4-sida och 11 punkters fontstorlek
+
+\usepackage[T1]{fontenc} % 8-bitarskodning som har 256 glyfer
+\usepackage[swedish]{babel} % Svenskt språk
+\usepackage[utf8]{inputenc} % För svenska tecken
+\usepackage{dtklogos} % Logos
+\usepackage{wallpaper} % Bakgrundsbild
+\usepackage{fancyhdr} % Specialsidhuvud och sidfot
+\usepackage{enumerate} 
+\usepackage{xifthen}% provides \isempty test
+\pagestyle{fancyplain} % Använd sidhuvud och sidfot på alla sidor
+\newcounter{tmpc}
+\fancyhead[L]{Seminarie 5 -- 1DV416 -- HT13 -- Windowsadministraion I} % Titel till vänster i sidhuvud
+\fancyhead[C]{} % Tomt i mitten
+\fancyhead[R]{} % Tomt till höger
+\fancyfoot[L]{} % Tomt till vänster
+\fancyfoot[C]{} % Tomt i mitten
+\fancyfoot[R]{\thepage} % Sidnumrering till höger i sidfoten
+\renewcommand\thesection{\arabic{section}} % Section beter sig som i dokumentklassen article
+
+\newcommand{\win}[1]{Microsoft Windows Server\ifthenelse{\isempty{#1}}{}{ #1}}
+\newcommand{\gui}[0]{``Server with a GUI''}
+\newcommand{\core}[0]{Windows Server Core}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\newcommand\BackgroundPic{
+    \put(-50,-50){
+    \includegraphics[keepaspectratio,scale=0.65]{lnu_etch.png} % Bakgrundsbild
+    }
+}
+\newcommand\BackgroundPicLogo{
+    \put(15,700){
+    \includegraphics[keepaspectratio,scale=0.10]{logo.png} % Logga i vänstra hörnet
+    }
+}
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Skapa hortisontell linje
+
+\title{	\vspace{-10cm}
+    \normalfont \normalsize
+    \textsc{Linnéuniversitetet} \\ [25pt] % Universitetes namn
+    \horrule{0.5pt} \\[0.4cm] % Tunn linje högst upp
+    \huge Seminarie 5\\ % Arbetes titel
+	\large \textcolor{gray}{1DV416 -- Windowsadministraion I}
+    \horrule{0.5pt} \\[0.4cm] % Tunn linje längst ner
+}
+
+\author{Jacob Lindehoff} % Författarnas namn
+
+\date{\normalsize\today} % Dagens datum
+
+\begin{document}
+\AddToShipoutPicture*{\BackgroundPic} % Lägger in backgrundsbild på första sidan
+\AddToShipoutPicture*{\BackgroundPicLogo}
+\maketitle % Skriv ut titeln
+\noindent % Tabba inte in på första meningen
+
+%------------------------------------------------
+%	Introduktion
+%------------------------------------------------
+\section{Introduktion}
+Under detta seminarium kommer vi att titta närmar på följande ämnen:
+\begin{itemize}
+\item Skriptning
+\begin{itemize}
+    \item Grunderna    \item Användbara kommandon    \item Jobba mot Active Directory    \item Batch skript
+\end{itemize}
+\item Backup
+\item Volume Shadow Copy
+\item Diskhantering
+\item Skriptning
+\begin{itemize}
+    \item Performance Monitor    \item Event Viewer
+\end{itemize}
+\end{itemize}
+
+%------------------------------------------------
+%	Deadline
+%------------------------------------------------
+\section{Dealine}
+Seminariet är den {\color{red}9:e jan 2014} och det är obligatorisk närvaro.
+Frånfälle måste meddelas i förväg och redovisning sker i from av en skriftlig rapport.
+Rapporten ska lämnas in senast {\color{red}3 dagar} efter seminariet och bestå detaljerade svar av samtliga seminariefrågor i löpande text.
+\newpage
+%------------------------------------------------
+%	Seminariefrågor
+%------------------------------------------------
+\section{Seminariefrågor}
+\begin{enumerate}
+\begin{large}
+\item Förklara hur man navigerar i kommandoprompten och vilka kortkommandon som är bara att känna till.\item Förklara vad följande kommandon används till. Om det finns tilläggsväxlar till kommandona så beskriv även hur dessa används.\begin{enumerate}[a.]
+	\item cls
+	\item dir
+	\item type
+	\item mkdir
+	\item rmdir
+	\item cd
+	\item del
+	\item xcopy
+	\item move
+	\item rename
+	\item net share
+	\item net use
+	\item net start
+	\item dsadd
+	\item dsget
+	\item dsquery
+\end{enumerate}\item Vad är ett ''Distinguished Name''?\item Vad gör följande kommando:dsquery user ''OU=Users, OU=Washington, DC=mediawork, DC=local'' | dsmod user -desc ''Washington User''\item Hur fungerar skriptfiler?\item Hur använder man sig av variabler i skript?\item Det kan ofta bli problem med svenska tecken som åäö i skriptfiler, vad beror detta på och hur löser man detta?\item Hur gör man för att flytta runt exekveringen i en skriptfil?\item Beskriv hur de fyra olika FOR-looparna fungerar?\item Beskriv följande typer av backup:\begin{enumerate}[a.]
+	\item Full eller Normal backup
+	\item Differential backup
+	\item Incremental backup
+\end{enumerate}\item Hur fungerar Windows Server Backup i Windows Server 2012 R2?\item Vad är Volyme Shadow Copy och hur fungerar det?\item Vilka verktyg finns integrerade i operativsystem för att hantera felsökning och övervakning i Windows Server?
+\end{large}
+\end{enumerate}
+\end{document}

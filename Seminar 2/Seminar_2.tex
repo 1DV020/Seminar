@@ -12,9 +12,31 @@
 \usepackage{fancyhdr} % Specialsidhuvud och sidfot
 \usepackage{enumerate} 
 \usepackage{xifthen}% provides \isempty test
+\usepackage{listings}% Code examples
+\usepackage{xcolor}
+
+\lstdefinestyle{BashInputStyle}{
+  language=bash,
+  basicstyle=\small\sffamily,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=3pt,
+  frame=tb,
+  columns=fullflexible,
+  backgroundcolor=\color{yellow!20},
+  linewidth=0.9\linewidth,
+  xleftmargin=0.1\linewidth
+}
+% Exampels
+% Inline
+% \lstinline[style=BashInputStyle]´# apt-get --purge remove rubygems´.
+% Multiline
+% \begin{lstlisting}[style=BashInputStyle]
+%    # apt-get --purge remove rubygems
+% \end{lstlisting}
+
 \pagestyle{fancyplain} % Använd sidhuvud och sidfot på alla sidor
-\newcounter{tmpc}
-\fancyhead[L]{Seminarie 4 -- 1DV416 -- HT13 -- Windowsadministraion I} % Titel till vänster i sidhuvud
+\fancyhead[L]{Seminar 2 -- 1DV020 -- 2015 -- Server Administration} % Titel till vänster i sidhuvud
 \fancyhead[C]{} % Tomt i mitten
 \fancyhead[R]{} % Tomt till höger
 \fancyfoot[L]{} % Tomt till vänster
@@ -43,10 +65,10 @@
 
 \title{	\vspace{-10cm}
     \normalfont \normalsize
-    \textsc{Linnéuniversitetet} \\ [25pt] % Universitetes namn
+    \textsc{Linnaeus University} \\ [25pt] % Universitetes namn
     \horrule{0.5pt} \\[0.4cm] % Tunn linje högst upp
-    \huge Seminarie 4\\ % Arbetes titel
-	\large \textcolor{gray}{1DV416 -- Windowsadministraion I}
+    \huge Seminar 2\\ % Arbetes titel
+	\large \textcolor{gray}{1DV020 -- Server Administration}
     \horrule{0.5pt} \\[0.4cm] % Tunn linje längst ner
 }
 
@@ -55,68 +77,75 @@
 \date{\normalsize\today} % Dagens datum
 
 \begin{document}
-\AddToShipoutPicture*{\BackgroundPic} % Lägger in backgrundsbild på första sidan
-\AddToShipoutPicture*{\BackgroundPicLogo}
-\maketitle % Skriv ut titeln
-\noindent % Tabba inte in på första meningen
+  \AddToShipoutPicture*{\BackgroundPic} % Lägger in backgrundsbild på första sidan
+  \AddToShipoutPicture*{\BackgroundPicLogo}
+  \maketitle % Skriv ut titeln
+  \noindent % Tabba inte in på första meningen
 
-%------------------------------------------------
-%	Introduktion
-%------------------------------------------------
-\section{Introduktion}
-Under detta seminarium kommer vi att titta närmar på följande ämnen:
-\begin{itemize}
-\item Active Directory
-\begin{itemize}    \item A G/U DL P
-    \item Group Policy\end{itemize}
-\item Filsystem\item Rättigheter\item Diskhantering\end{itemize}
+  %------------------------------------------------
+  % Introduktion
+  %------------------------------------------------
+  \section{Introduction}
+  During this seminar, we will address the following topics:
+  \begin{itemize}
+    \item File Systems: NTFS, EXT
+    \item Local Users and Groups
+    \item Storage – RAID
+    \item File server - SMB and Samba
+  \end{itemize}
 
-%------------------------------------------------
-%	Deadline
-%------------------------------------------------
-\section{Dealine}
-Seminariet är den {\color{red}19:e december 2013} och det är obligatorisk närvaro.
-Frånfälle måste meddelas i förväg och redovisning sker i from av en skriftlig rapport.
-Rapporten ska lämnas in senast {\color{red}3 dagar} efter seminariet och bestå detaljerade svar av samtliga seminariefrågor i löpande text.
-\newpage
-%------------------------------------------------
-%	Seminariefrågor
-%------------------------------------------------
-\section{Seminariefrågor}
-\subsection{Filsystemet NTFS}
-\begin{enumerate}
-\begin{large}
-\item Vilken extra funktionalitet får du med NTFS jämnfört med FAT32?\item Förklara hur rättighetsarv fungerar i NTFS?\item Vad är en ACL och vad innehåller den?\item Vad menas med kumulativa rättigheter?\item Vad händer med NTFS-rättigheterna när du\begin{enumerate}[a.]
-	\item flyttar en fil inom samma volym	\item kopierar en fil inom samma volym	\item flyttar en fil till en annan volym	\item kopierar en fil till en annan volym
-\end{enumerate}\item Kan mer än en användare vara ägare av en fil eller katalog, motivera ditt svar?\item Vilka är skillnaderna på NTFS-rättigheter och Utdelnings-rättigheter?\begin{enumerate}[a.]
-	\item Varför finns utdelningsrättigheter när vi kan använda NTFS-rättigheter istället?
-\end{enumerate}\item På vilka två sätt kan Windows hantera feltolerant disklagring?\item Förklara följande disklagringsmetoder, både hur de fungerar och när det rekommenderas att använda:\begin{enumerate}[a.]
-	\item Simple	\item Spanned	\item Striped	\item Mirrored	\item RAID-5
-\end{enumerate}\item Vad menas med NTFS-monterade enheter?\item Har NTFS stöd för Symboliska länkar som finns i t ex Linux?
-\setcounter{tmpc}{\theenumi}
-\end{large}
-\end{enumerate}
+  %------------------------------------------------
+  %	Deadline
+  %------------------------------------------------
+  \section{Deadline}
+  The seminar is on the {\color{red}11th of February 2015} and it is compulsory. If you cannot participate, it must be notified in advance and a written report of the seminar must be submitted no later than {\color{red}3 days} after the seminar. The written report should contain detailed answers to all questions in the seminar.
+  \newpage
 
-\subsection{Access Control}
-\begin{enumerate}
-\setcounter{enumi}{\thetmpc}
-\begin{large}
-\item Vad är A G/U DL P strategin, beskriv i detalj och gärna med några exempel?
-\setcounter{tmpc}{\theenumi}
-\end{large}
-\end{enumerate}
+  %------------------------------------------------
+  %	Seminariefrågor
+  %------------------------------------------------
+  \section{Seminar Questions}
+  \subsection{File Systems}
+  \begin{enumerate}
+    \begin{large}
+      \item Vilken extra funktionalitet får du med NTFS jämnfört med FAT32?
+      \item Förklara hur rättighetsarv fungerar i NTFS?
+      \item Vad är en ACL och vad innehåller den?
+      \item Vad menas med kumulativa rättigheter?
+      \item Vad händer med NTFS-rättigheterna när du
+      \begin{enumerate}[a.]
+      	\item flyttar en fil inom samma volym
+      	\item kopierar en fil inom samma volym
+      	\item flyttar en fil till en annan volym
+      	\item kopierar en fil till en annan volym
+      \end{enumerate}
+      \item Kan mer än en användare vara ägare av en fil eller katalog, motivera ditt svar?
+      \item Vilka är skillnaderna på NTFS-rättigheter och Utdelnings-rättigheter?
+      \begin{enumerate}[a.]
+      	\item Varför finns utdelningsrättigheter när vi kan använda NTFS-rättigheter istället?
+      \end{enumerate}
+      \item På vilka två sätt kan Windows hantera feltolerant disklagring?
+      \item Förklara följande disklagringsmetoder, både hur de fungerar och när det rekommenderas att använda:
+      \begin{enumerate}[a.]
+      	\item Simple
+      	\item Spanned
+      	\item Striped
+      	\item Mirrored
+      	\item RAID-5
+      \end{enumerate}
+      \item Vad menas med NTFS-monterade enheter?
+      \item Har NTFS stöd för Symboliska länkar som finns i t ex Linux?
+      \setcounter{tmpc}{\theenumi}
+    \end{large}
+  \end{enumerate}
 
-\subsection{Group Policy}
-\begin{enumerate}
-\begin{large}
-\setcounter{enumi}{\thetmpc}
-\item Vad ändvänds Group Policy till?\item Vad kan du applicera GPOer på?\item Vilka AD-objekt påverkas av Group Policy?\item Kan man applicera ett GPO på flera olika ställen?\item När appliceras ”Group Policy” inställningarna?\item Vad gäller vid konflikter mellan gruppolicy-inställningar?\item Vad menas man att man blockerar GPO arvet på ett OU?\begin{enumerate}[a.]
-	\item Hur påverkad det om man har satt Enforced (No Override) på ett GPO?
-\end{enumerate}\item Vad är Group Policy Security Filtering?\begin{enumerate}[a.]
-	\item Varför bör man undvika detta?
-\end{enumerate}\item Vad används följande verktyg till?\begin{enumerate}[a.]
-	\item gpupdate	\item gpresult
-\end{enumerate}\item Välj ut 10 olika Group Policy inställningar som du tycker är intressanta och beskriv dessa
-\end{large}
-\end{enumerate}
+    \subsection{Access Control}
+    \begin{enumerate}
+    \setcounter{enumi}{\thetmpc}
+    \begin{large}
+    \item Vad är A G/U DL P strategin, beskriv i detalj och gärna med några exempel?
+    \setcounter{tmpc}{\theenumi}
+    \end{large}
+  \end{enumerate}
+
 \end{document}

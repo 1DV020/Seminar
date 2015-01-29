@@ -14,7 +14,7 @@
 \usepackage{xifthen}% provides \isempty test
 \usepackage{listings}% Code examples
 \usepackage{xcolor}
-
+\newcounter{tmpc}
 \lstdefinestyle{BashInputStyle}{
   language=bash,
   basicstyle=\small\sffamily,
@@ -108,42 +108,58 @@
   \subsection{File Systems}
   \begin{enumerate}
     \begin{large}
-      \item Vilken extra funktionalitet får du med NTFS jämnfört med FAT32?
-      \item Förklara hur rättighetsarv fungerar i NTFS?
-      \item Vad är en ACL och vad innehåller den?
-      \item Vad menas med kumulativa rättigheter?
-      \item Vad händer med NTFS-rättigheterna när du
+      \item What additional functionality you get with NTFS when compared to FAT32?
+      \item Explain how permission inheritance works in NTFS?
+      \item VWhat is an ACL and what does it contain?
+      \item What is cumulative NTFS permissions?
+      \item What happens with the NTFS permissions when:
       \begin{enumerate}[a.]
-      	\item flyttar en fil inom samma volym
-      	\item kopierar en fil inom samma volym
-      	\item flyttar en fil till en annan volym
-      	\item kopierar en fil till en annan volym
+      	\item move a file within the same NTFS volume
+      	\item copy a file within the same NTFS volume
+      	\item move a file to another NTFS volume
+      	\item copy a file to another NTFS volume
       \end{enumerate}
-      \item Kan mer än en användare vara ägare av en fil eller katalog, motivera ditt svar?
-      \item Vilka är skillnaderna på NTFS-rättigheter och Utdelnings-rättigheter?
-      \begin{enumerate}[a.]
-      	\item Varför finns utdelningsrättigheter när vi kan använda NTFS-rättigheter istället?
-      \end{enumerate}
-      \item På vilka två sätt kan Windows hantera feltolerant disklagring?
-      \item Förklara följande disklagringsmetoder, både hur de fungerar och när det rekommenderas att använda:
-      \begin{enumerate}[a.]
-      	\item Simple
-      	\item Spanned
-      	\item Striped
-      	\item Mirrored
-      	\item RAID-5
-      \end{enumerate}
-      \item Vad menas med NTFS-monterade enheter?
-      \item Har NTFS stöd för Symboliska länkar som finns i t ex Linux?
+      \item Can more than one user to be the owner of a file or directory, motivate your answer?
+      \item What is NTFS mounted drives?
+      \item Have NTFS support for symbolic links that are in eg Linux?
       \setcounter{tmpc}{\theenumi}
     \end{large}
   \end{enumerate}
 
-    \subsection{Access Control}
-    \begin{enumerate}
+  \subsection{Local Users and Groups}
+  \begin{enumerate}
     \setcounter{enumi}{\thetmpc}
     \begin{large}
-    \item Vad är A G/U DL P strategin, beskriv i detalj och gärna med några exempel?
+      \item Question...
+    \setcounter{tmpc}{\theenumi}
+    \end{large}
+  \end{enumerate}
+
+  \subsection{Storage – RAID}
+  \begin{enumerate}
+    \setcounter{enumi}{\thetmpc}
+    \begin{large}
+      \item In what two ways can Windows handle fault-tolerant disk storage?
+      \item Explain the following disk storage methods, both how they work and when it is recommended to use:
+      \begin{enumerate}[a.]
+        \item Simple
+        \item Spanned
+        \item Striped
+        \item Mirrored
+        \item RAID-5
+      \end{enumerate}
+    \setcounter{tmpc}{\theenumi}
+    \end{large}
+  \end{enumerate}
+
+  \subsection{File server - SMB and Samba}
+  \begin{enumerate}
+    \setcounter{enumi}{\thetmpc}
+    \begin{large}
+      \item What are the differences on NTFS permissions and Share permissions?
+      \begin{enumerate}[a.]
+        \item Why dose share permission exists when we can use the NTFS permissions instead?
+      \end{enumerate}
     \setcounter{tmpc}{\theenumi}
     \end{large}
   \end{enumerate}

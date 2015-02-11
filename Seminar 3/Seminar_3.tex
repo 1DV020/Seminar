@@ -5,7 +5,7 @@
 \documentclass[paper=a4, fontsize=11pt]{report} % A4-sida och 11 punkters fontstorlek
 
 \usepackage[T1]{fontenc} % 8-bitarskodning som har 256 glyfer
-\usepackage[swedish]{babel} % Svenskt språk
+\usepackage[english]{babel} % Svenskt språk
 \usepackage[utf8]{inputenc} % För svenska tecken
 \usepackage{dtklogos} % Logos
 \usepackage{wallpaper} % Bakgrundsbild
@@ -88,7 +88,7 @@
   \section{Introduction}
   During this seminar, we will address the following topics:
   \begin{itemize}
-    \item DNS - bind
+    \item DNS
     \item DHCP
     \item Web Server
   \end{itemize}
@@ -107,23 +107,19 @@
   \subsection{DNS}
   \begin{enumerate}
     \begin{large}
-		\item Vad är DNS och dess huvuduppgift?
-		\item Vad är Forward Lookup Zone?
-		\item Vad är Reverse Lookup Zone?
-		\item Beskriv 10 olika toppdomäner och dess användningsområden.
-		\item Utan DNS skulle inte Internet fungera:
+		\item What is DNS and its main function?
+		\item What is Forward Lookup Zone?
+		\item What is Reverse Lookup Zone?
+		\item Please describe 10 different TLDs and its uses.
+		\item Without DNS, the Internet would not work:
 		\begin{enumerate}[a.]
-			\item Hur fungerar DNS-strukturen på Internet?
-			\item Måste företagets DNS servrar vara uppkopplade mot Internets DNS servrar?
-			\item Hur skiljer sig en intern DNS server från en publik?
+			\item How does DNS structure on the Internet work?
+			\item Must the company's DNS servers to be connected to the Internet's DNS servers?
+			\item What is the difference between an internal DNS server from an public?
 		\end{enumerate}
-		\item Hur fungerar DNS delegering och när används detta?
-		\item Det finns en zon typ som är specifik för Microsofts DNS servrar, vilken är det och vad används den till?
-		\begin{enumerate}[a.]
-			\item	Vad är ett Glue record?
-		\end{enumerate}
-		\item	Hur går du till väga för att skapa redundans på en zon/domän?
-		\item	Beskriv följande records:
+		\item How does a DNS delegation work and when is it used?
+		\item How do you go about creating redundancy in a zone / domain?
+		\item Describe the following records:
 		\begin{enumerate}[a.]
 			\item CNAME
 			\item PTR
@@ -133,23 +129,21 @@
 			\item SOA
 			\item A
 		\end{enumerate}
-		\item Vad är Zone transfer?
-		\item Vad är ROOT hints och vad används de till?
-		\item Beskriv fördelar och nackdelar med DNS caching.
-		\item Vad är DNS forward och hur fungerar det?
+		\item What is a Zone transfer?
+		\item How dose ROOT hints work?
+		\item Describe the advantages and disadvantages of DNS caching.
+		\item What is DNS forward and how it works?
 		\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{./figure_1}
-		\caption{Namnsservrar på Internet}
+		\caption{Namne servers on the Internet}
 		\label{fig:figure_1}
 		\end{figure}
 		
-		\item Låt oss säga att du har en klient som är koppla till 
-		ett nätverk som har en egen DNS server som är konfigurerad med DNS forward till företagets 
-		ISPs DNS server. Utgå från Figur \ref{fig:figure_1}
+		\item Let's say you have a client that is connecting to a network that has its own DNS server that is configured with DNS forward to the company's ISP's DNS server. Start from Figure \ref{fig:figure_1}
 		\begin{enumerate}[a.]
-			\item Beskriv i detalj vad som händer när klienten ställer en rekursiv DNS fråga om IP för www.dfm.lnu.se 
-			\item Beskriv i detalj vad som händer när klienten ställer en iterativ DNS fråga om IP för www.dfm.lnu.se 
+			\item Describe in detail what happens when the client makes a recursive DNS request for IP of www.dfm.lnu.se 
+			\item Describe in detail what happens when the client makes a none recursive DNS request for IP of www.dfm.lnu.se 
 		\end{enumerate}
     \end{large}
     \setcounter{tmpc}{\theenumi}
@@ -159,8 +153,8 @@
   \begin{enumerate}
   \setcounter{enumi}{\thetmpc}	
     \begin{large}
-	    \item Vad används DHCP till och på vilket sätt förenklar detta administrationen?
-		\item Beskriv följande DHCP-termer:
+	    \item What is DHCP and how this simplifies administration?
+		\item Describe the following DHCP terms:
 		\begin{enumerate}[a.]
 			\item Scope
 			\item Exclusion range
@@ -168,8 +162,7 @@
 			\item Lease
 			\item Reservation
 		\end{enumerate}
-		\item Beskriv de olika stegen i en DHCP förfrågan?
-		\item Beskriv hur DHCP kan integreras med DNS och vilka fördelar/nackdelar detta medför?
+		\item Describe the different steps of a DHCP request?
     \end{large}
     
     \setcounter{tmpc}{\theenumi}

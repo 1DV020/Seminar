@@ -67,7 +67,7 @@
     \normalfont \normalsize
     \textsc{Linnaeus University} \\ [25pt] % Universitetes namn
     \horrule{0.5pt} \\[0.4cm] % Tunn linje högst upp
-    \huge Seminar 2\\ % Arbetes titel
+    \huge Seminar 3\\ % Arbetes titel
 	\large \textcolor{gray}{1DV020 -- Server Administration}
     \horrule{0.5pt} \\[0.4cm] % Tunn linje längst ner
 }
@@ -133,6 +133,7 @@
 		\item How dose ROOT hints work?
 		\item Describe the advantages and disadvantages of DNS caching.
 		\item What is DNS forward and how it works?
+		\newpage
 		\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{./figure_1}
@@ -154,6 +155,7 @@
   \setcounter{enumi}{\thetmpc}	
     \begin{large}
 	    \item What is DHCP and how this simplifies administration?
+		\newpage
 		\item Describe the following DHCP terms:
 		\begin{enumerate}[a.]
 			\item Scope
@@ -167,12 +169,24 @@
     
     \setcounter{tmpc}{\theenumi}
   \end{enumerate}
-  \newpage
+
   \subsection{Web server}
   \begin{enumerate}
   \setcounter{enumi}{\thetmpc}
     \begin{large}
-    	\item Question
+    	\item Locate where apache2 by default stores the website content and how you can change it.
+    	\item Name and describe three different non-core apache modules that you find useful.
+    	\item Explain how logging is working, where the log files are stored  and how it/what can be configured.
+    	\item What does virtual hosts means in apache and how can the server decide which to use?
+    	\item In your apache configuration directory (/etc/apache2/) there are a few configuration files and folder. What does these do/contain?
+    	\item Explain what the following programs do (included in the apache installation) and how it locates the files it is using.
+			\begin{enumerate}[a.]
+				\item a2enmod, a2dismod
+				\item a2ensite, a2dissite
+				\item a2enconf, a2disconf
+		\end{enumerate}
+		\item What does the different sections <If>, <Directory>, <Locations>, <Files>mean in apache? Try to find some useful examples on each.
+		\item For this part we decided to use apache but there exists other webservers such as ngnix. Describe some benefits and drawbacks with apache. Can you find any other programs? What alternatives does it exist for windows?
     \end{large}
   \end{enumerate}
 \end{document}

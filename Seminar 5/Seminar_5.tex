@@ -5,16 +5,38 @@
 \documentclass[paper=a4, fontsize=11pt]{report} % A4-sida och 11 punkters fontstorlek
 
 \usepackage[T1]{fontenc} % 8-bitarskodning som har 256 glyfer
-\usepackage[swedish]{babel} % Svenskt språk
+\usepackage[english]{babel} % Svenskt språk
 \usepackage[utf8]{inputenc} % För svenska tecken
 \usepackage{dtklogos} % Logos
 \usepackage{wallpaper} % Bakgrundsbild
 \usepackage{fancyhdr} % Specialsidhuvud och sidfot
 \usepackage{enumerate} 
 \usepackage{xifthen}% provides \isempty test
-\pagestyle{fancyplain} % Använd sidhuvud och sidfot på alla sidor
+\usepackage{listings}% Code examples
+\usepackage{xcolor}
 \newcounter{tmpc}
-\fancyhead[L]{Seminarie 5 -- 1DV416 -- HT13 -- Windowsadministraion I} % Titel till vänster i sidhuvud
+\lstdefinestyle{BashInputStyle}{
+  language=bash,
+  basicstyle=\footnotesize\ttfamily,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=3pt,
+  frame=tb,
+  columns=fullflexible,
+  backgroundcolor=\color{yellow!20},
+  linewidth=0.9\linewidth,
+  xleftmargin=0.1\linewidth
+}
+% Exampels
+% Inline
+% \lstinline[style=BashInputStyle]´# apt-get --purge remove rubygems´.
+% Multiline
+% \begin{lstlisting}[style=BashInputStyle]
+%    # apt-get --purge remove rubygems
+% \end{lstlisting}
+
+\pagestyle{fancyplain} % Använd sidhuvud och sidfot på alla sidor
+\fancyhead[L]{Seminar 5 -- 1DV020 -- 2015 -- Server Administration} % Titel till vänster i sidhuvud
 \fancyhead[C]{} % Tomt i mitten
 \fancyhead[R]{} % Tomt till höger
 \fancyfoot[L]{} % Tomt till vänster
@@ -43,10 +65,10 @@
 
 \title{	\vspace{-10cm}
     \normalfont \normalsize
-    \textsc{Linnéuniversitetet} \\ [25pt] % Universitetes namn
+    \textsc{Linnaeus University} \\ [25pt] % Universitetes namn
     \horrule{0.5pt} \\[0.4cm] % Tunn linje högst upp
-    \huge Seminarie 5\\ % Arbetes titel
-	\large \textcolor{gray}{1DV416 -- Windowsadministraion I}
+    \huge Seminar 5\\ % Arbetes titel
+	\large \textcolor{gray}{1DV020 -- Server Administration}
     \horrule{0.5pt} \\[0.4cm] % Tunn linje längst ner
 }
 
@@ -60,11 +82,12 @@
 \maketitle % Skriv ut titeln
 \noindent % Tabba inte in på första meningen
 
+
 %------------------------------------------------
 %	Introduktion
 %------------------------------------------------
-\section{Introduktion}
-Under detta seminarium kommer vi att titta närmar på följande ämnen:
+\section{Introduction}
+During this seminar, we will address the following topics:
 \begin{itemize}
 \item Skriptning
 \begin{itemize}
@@ -83,10 +106,7 @@ Under detta seminarium kommer vi att titta närmar på följande ämnen:
 %	Deadline
 %------------------------------------------------
 \section{Dealine}
-Seminariet är den {\color{red}9:e jan 2014} och det är obligatorisk närvaro.
-Frånfälle måste meddelas i förväg och redovisning sker i from av en skriftlig rapport.
-Rapporten ska lämnas in senast {\color{red}3 dagar} efter seminariet och bestå detaljerade svar av samtliga seminariefrågor i löpande text.
-\newpage
+  The seminar is on the {\color{red}11th of March 2015} and it is compulsory. If you cannot participate, it must be notified in advance and a written report of the seminar must be submitted no later than {\color{red}3 days} after the seminar. The written report should contain detailed answers to all questions in the seminar.\newpage
 %------------------------------------------------
 %	Seminariefrågor
 %------------------------------------------------

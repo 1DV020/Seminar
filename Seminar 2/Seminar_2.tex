@@ -114,14 +114,14 @@
       	\item NTFS
       \end{enumerate}
       \item What additional functionality you get with NTFS when compared to FAT32?
-      \item Can more than one user to be the owner of a file or directory, motivate your answer?
+      \item Can more than one user be the owner of a file or directory? Motivate your answer.
       	\begin{enumerate}[a.]
       		\item in Windows
       		\item in Linux
 	    \end{enumerate}
-      \item What is NTFS mounted drives?
-      \item Have NTFS support for symbolic links that are in eg Linux?
-      \item What kind of  filesystems does:
+      \item What are NTFS mounted drives?
+      \item Does NTFS have support for symbolic links that are in e.g. Linux?
+      \item What kind of filesystems does:
       \begin{enumerate}[a.]
       	\item Linux support to be run on?
       	\item Windows support to be run on? 
@@ -136,8 +136,8 @@
   \begin{enumerate}
     \setcounter{enumi}{\thetmpc}
     \begin{large}
-      \item What files are handling the users and groups in linux? 
-      \item Where are the password stored in Linux?
+      \item What files are handling the users and groups in Linux? 
+      \item Where are the passwords stored in Linux?
       \item What does the following linux commands do and how do you use them?
       \begin{enumerate}[a.]
       	\item chown
@@ -152,16 +152,16 @@
 drwxr-xr-x	1	ceasar	root	0	jan 26	20:36	folder1
 		\end{lstlisting}
 		\begin{enumerate}[a.]
-      		\item What char denotes it is a folder?
+      		\item What character denotes it is a folder?
       		\item (as superuser) What would be the permissions if you issued these commands:      chmod 750 file1. Explain what changes from the original permissions setting.
       		\item Including the changes from {b} would adam be able to access file1? If you also(as superuser) issued chown bertil file1.
-      		\item If you want to recursively wants to change the owner to Adam of all subfolders and files of and including fodler1 what command would you issue?
+      		\item If you want to recursively change the owner to Adam of all subfolders and files including fodler1 what command would you issue?
       		\item file2 contains supersecret company information that only bertil should be allowed to see and change. What permissions would you have to set that only Bertil can see it? Are there any other users that you can think of that this information cannot be hidden from?
       	\end{enumerate}
   	  \item Explain how permission inheritance works in NTFS?
       \item What is an ACL and what does it contain?
-      \item What is cumulative NTFS permissions?
-      \item What happens with the NTFS permissions when:
+      \item What are cumulative NTFS permissions?
+      \item What happens with the NTFS permissions when we:
       \begin{enumerate}[a.]
       	\item move a file within the same NTFS volume
       	\item copy a file within the same NTFS volume
@@ -178,7 +178,7 @@ drwxr-xr-x	1	ceasar	root	0	jan 26	20:36	folder1
     \setcounter{enumi}{\thetmpc}
     \begin{large}
       \item Explain what RAID is and list some different types of RAID solutions.
-      \item Windows has different naming for RAID solutions, explain the following disk storage methods, both how they work and when it is recommended to use:
+      \item Windows has different naming for RAID solutions, explain the following disk storage methods, how they work and when it is recommended to use them:
       \begin{enumerate}[a.]
         \item Simple
         \item Spanned
@@ -194,12 +194,12 @@ drwxr-xr-x	1	ceasar	root	0	jan 26	20:36	folder1
   \begin{enumerate}
     \setcounter{enumi}{\thetmpc}
     \begin{large}
-      \item What are the differences on NTFS permissions and Share permissions?
+      \item What are the differences between NTFS permissions and Share permissions?
       \begin{enumerate}[a.]
-        \item Why dose share permission exists when we can use the NTFS permissions instead?
+        \item Why do Share permissions exist when we can use the NTFS permissions instead?
       \end{enumerate}
 	  \item Describe at least 3 ways to share a folder in Windows.
-	  \item Witch are the big difference between the versions of SMB?
+	  \item What are the big differences between the versions of SMB?
 	  \item Describe the early days of samba and how it was developed.
 	  \item What SMB(Server Message Block) versions does the current samba version support?
 	  \item Describe 5 options in the smb.conf file and what they do.

@@ -6,6 +6,7 @@
 *.fls
 *.out
 *.toc
+*.xdv
 
 ## Intermediate documents:
 *.dvi
@@ -110,3 +111,6 @@ sympy-plots-for-*.tex/
 
 ## OSX
 .DS_Store
+
+#.vscode
+*.vscode
